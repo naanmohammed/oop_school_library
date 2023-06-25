@@ -2,21 +2,17 @@ require_relative 'nameable'
 
 class Person < Nameable
   attr_reader :id, :name, :age
-  attr_accessor :name
-
-  def initialize(name)
-    @name = name
-  end
-
-  def correct_name
-    @name
-  end
 
   def initialize(age, name = 'Unknown', parent_permission: true)
+    super()
     @id = generate_id
     @name = name
     self.age = age
     @parent_permission = parent_permission
+  end
+
+  def correct_name
+    @name
   end
 
   def age=(age)
