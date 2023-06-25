@@ -1,17 +1,16 @@
+require_relative 'rental'
 require_relative 'nameable'
-require_relative 'capitalize_decorator'
-require_relative 'trim_decorator'
 
 class Person < Nameable
-  attr_reader :id
-  attr_accessor :name, :age
+  attr_accessor :rentals, :name
 
-  def initialize(age, name = 'Unknown', id = Random.rand(1..1000), parent_permission: true)
+  def initialize(age, name, id = Random.rand(1..1000), parent_permission: true)
     super()
     @id = id
     @name = name
     @age = age
     @parent_permission = parent_permission
+    @rentals = []
   end
 
   def can_use_services?
