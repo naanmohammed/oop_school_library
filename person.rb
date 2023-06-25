@@ -1,5 +1,16 @@
-class Person
+require_relative 'nameable'
+
+class Person < Nameable
   attr_reader :id, :name, :age
+  attr_accessor :name
+
+  def initialize(name)
+    @name = name
+  end
+
+  def correct_name
+    @name
+  end
 
   def initialize(age, name = 'Unknown', parent_permission: true)
     @id = generate_id
