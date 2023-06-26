@@ -8,7 +8,7 @@ class Person
     self.age = age
     @parent_permission = parent_permission
   end
-  
+
   def can_use_services?
     of_age? || @parent_permission
   end
