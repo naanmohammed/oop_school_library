@@ -9,7 +9,7 @@ class Person < Nameable
     super()
     @id = Random.rand(1..100)
     @name = name
-    @age = age
+    self.age = age
     @parent_permission = parent_permission
     @rentals = []
   end
@@ -30,5 +30,9 @@ class Person < Nameable
 
   def of_age?
     @age >= 18
+  end
+
+  def generate_id
+    Random.rand(1..1000)
   end
 end

@@ -3,6 +3,7 @@ require_relative 'person'
 class Teacher < Person
   def initialize(age, specialization, name = 'Unknown')
     super(age: age, name: name)
+
     @specialization = specialization
   end
 
