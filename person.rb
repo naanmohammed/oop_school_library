@@ -15,10 +15,6 @@ class Person < Nameable
     @name
   end
 
-  def age=(age)
-    @age = age.to_i
-  end
-
   def can_use_services?
     of_age? || @parent_permission
   end
