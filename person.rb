@@ -1,12 +1,18 @@
-class Person
-  attr_accessor :name, :age
-  attr_reader :id
+require_relative 'nameable'
+
+class Person < Nameable
+  attr_reader :id, :name, :age
 
   def initialize(age, name = 'Unknown', parent_permission: true)
+    super()
     @id = generate_id
     @name = name
     self.age = age
     @parent_permission = parent_permission
+  end
+
+  def correct_name
+    @name
   end
 
   def can_use_services?
