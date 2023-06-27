@@ -9,9 +9,13 @@ class Person < Nameable
     super()
     @id = id
     @name = name
-    @age = age
+    self.age = age
     @parent_permission = parent_permission
     @rentals = []
+  end
+
+  def correct_name
+    @name
   end
 
   def can_use_services?
