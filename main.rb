@@ -35,3 +35,5 @@ def option(input)
     puts 'Please enter a number between 1 and 7'
   end
 end
+
+main
