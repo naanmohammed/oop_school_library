@@ -58,5 +58,29 @@
       "name": "Jack",
       "age": 16
     }
+  },
+  {
+    "date": "19-03-2023",
+    "book": {
+      "title": "The Power of Now",
+      "author": "Eric"
+    },
+    "person": {
+      "id": 3,
+      "name": "Jack",
+      "age": 16
+    }
+  },
+  {
+    "date": "19-04-2023",
+    "book": {
+      "title": "Atomic Habits",
+      "author": "James Clear"
+    },
+    "person": {
+      "id": 94,
+      "name": "Miko",
+      "age": 35
+    }
   }
 ]
