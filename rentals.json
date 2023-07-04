@@ -1,0 +1,62 @@
+[
+  {
+    "date": "12/03/2023",
+    "book": {
+      "title": "Love story",
+      "author": "Ana\n"
+    },
+    "person": {
+      "id": 46,
+      "name": "Fredo",
+      "age": 23
+    }
+  },
+  {
+    "date": "19-06-2023",
+    "book": {
+      "title": "Love story",
+      "author": "Ana\n"
+    },
+    "person": {
+      "id": 1,
+      "name": "Naan",
+      "age": 24
+    }
+  },
+  {
+    "date": "19-06-2023",
+    "book": {
+      "title": "Atomic Habits",
+      "author": "James Clear"
+    },
+    "person": {
+      "id": 94,
+      "name": "Miko",
+      "age": 35
+    }
+  },
+  {
+    "date": "19-04-2023",
+    "book": {
+      "title": "The Power of Now",
+      "author": "Eric"
+    },
+    "person": {
+      "id": 94,
+      "name": "Miko",
+      "age": 35
+    }
+  },
+  {
+    "date": "17-06-2023",
+    "book": {
+      "title": "The Power of Now",
+      "author": "Eric"
+    },
+    "person": {
+      "id": 3,
+      "name": "Jack",
+      "age": 16
+    }
+  }
+]
