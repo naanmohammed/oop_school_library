@@ -104,13 +104,13 @@ class App
 
     data = @preserve_person
     @persons.each do |person|
-      data << { name: person.name, id: person.id, age: person.age, specialization: person.specialization, classname: person.class.name }
+      data << { name: person.name, id: person.id, age: person.age, specialization: person.specialization,
+                classname: person.class.name }
     end
 
     Store.save('people.json', data)
     puts 'Teacher created successfully.'
   end
-
 
   def create_book
     puts 'Create a new book'
@@ -137,7 +137,9 @@ class App
       @books.each_with_index { |book, index| puts "#{index}) Title: #{book.title}, Author: #{book.author}" }
     end
     if !@preserve_book.empty?
-      @preserve_book.each_with_index { |book, index| puts "#{index}) Title: #{book['title']}, Author: #{book['author']}" }
+      @preserve_book.each_with_index { |book, index|
+        puts "#{index}) Title: #{book['title']}, Author: #{book['author']}"
+      }
     end
     book_id = gets.chomp.to_i
 
@@ -179,12 +181,12 @@ class App
     if !@rentals.empty? || !@preserve_rental.empty?
       (@rentals + @preserve_rental).each do |rental|
         if rental['person'] && rental['person']['id'] == id
-          puts "Person: #{rental['person']['name']}, Date: #{rental['date']}, Book: '#{rental['book']['title']}' by #{rental['book']['author']}"
+          puts "Person: #{rental['person']['name']}, Date: #{rental['date']}, Book: '#{rental['book']['title']}'
+           by #{rental['book']['author']}"
           rentals_found = true
         end
       end
     end
     puts 'No rentals found.' unless rentals_found
   end
-
 end

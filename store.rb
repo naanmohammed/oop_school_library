@@ -1,4 +1,5 @@
 require 'json'
+
 module Store
   def self.save(file_path, data)
     arr = JSON.pretty_generate(data)
