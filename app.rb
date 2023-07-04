@@ -111,7 +111,6 @@ class App
     puts 'Teacher created successfully.'
   end
 
-
   def create_book
     puts 'Create a new book'
     print 'Enter title: '
@@ -134,12 +133,8 @@ class App
   # rubocop:disable Metrics/AbcSize, Metrics/CyclomaticComplexity
   def create_rental
     puts 'Select the book you want to rent by entering its number'
-    if !@books.empty?
-      @books.each_with_index { |book, index| puts "#{index}) Title: #{book.title}, Author: #{book.author}" }
-    end
-    if !@preserve_book.empty?
-      @preserve_book.each_with_index { |book, index| puts "#{index}) Title: #{book['title']}, Author: #{book['author']}" }
-    end
+    @books.each_with_index { |book, index| puts "#{index}) Title: #{book.title}, Author: #{book.author}" } unless @books.empty?
+    @preserve_book.each_with_index { |book, index| puts "#{index}) Title: #{book['title']}, Author: #{book['author']}" } unless @preserve_book.empty?
     book_id = gets.chomp.to_i
 
     puts 'Select a person from the list by their number'
@@ -154,7 +149,7 @@ class App
     print 'Date: '
     date = gets.chomp.to_s
 
-    rental = Rental.new(date, @persons[person_id], @books[book_id])
+    Rental.new(date, @persons[person_id], @books[book_id])
     rental = Rental.new(date, @preserve_person[person_id], @preserve_book[book_id])
     @rentals << rental
 
@@ -171,7 +166,7 @@ class App
     puts 'Rental created successfully.'
   end
   # rubocop:enable Metrics/AbcSize, Metrics/CyclomaticComplexity
-  
+
   def list_all_rentals
     puts 'To see rentals, enter the person ID: '
     id = gets.chomp.to_i
@@ -188,5 +183,4 @@ class App
     end
     puts 'No rentals found.' unless rentals_found
   end
-
 end
